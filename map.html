@@ -1,0 +1,84 @@
+<!-- Code from d3-graph-gallery.com -->
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+<style>
+
+body {
+    width: 1700px;
+}
+
+div.tooltip {   
+    position: absolute;         
+    text-align: center;           
+    padding: 2px;               
+    font: 12px sans-serif;      
+    background: lightsteelblue; 
+    border: 0px;        
+    border-radius: 8px;         
+    pointer-events: none;           
+}
+.arc text {
+  font: 16px sans-serif;
+  color: white;
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.legend {
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+</style>
+<body>
+<div style="display: flex;flex-direction: row;">
+    <span>Choose Country:</span>
+    <select name="country" id="country-select">
+        <option value="Malaysia">Malaysia</option>
+        <option value="Thailand">Thailand</option>
+        <option value="Philippines">Philippines</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Brunei Darussalam">Brunei Darussalam</option>
+    </select>
+    <span style="margin-left: 30px">Year:</span>
+    <input type="text" id="years" readonly style="border:0; color:#f6931f; width: 90px">
+    <div id="slider-range" style="width:100px;"></div>
+</div>
+<!-- Create an element where the map will take place -->
+<svg id="d3-map" width="800" height="400"></svg>
+<svg id="d3-bubble" width="800" height="400"></svg>
+<svg id="d3-stacked" width="800" height="400"></svg>
+<svg id="d3-bar1" width="400" height="400"></svg>
+<svg id="d3-bar2" width="400" height="400"></svg>
+<svg id="d3-pie" width="400" height="400"></svg>
+<svg id="d3-line" width="800" height="400"></svg>
+</body>
+
+<script src="js/map.js"></script>
+</html>
